@@ -1,0 +1,19 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+    <logger name="org.hibernate" level="DEBUG"/>
+    <logger name="org.hibernate.sql" level="DEBUG"/>
+    <logger name="org.hibernate.type" level="TRACE"/>
+    <logger name="org.hibernate.stat" level="DEBUG"/>
+    <logger name="org.hibernate.type.descriptor.sql" level="trace"/><!-- <______________ Parametr odpowiedziałny za wyswietlenie znaków zapytania w sql-->
+
+<!--    <logger category="org.hibernate.stat" use-parent-handlers="true">-->
+<!--        <level name="DEBUG"/>-->
+<!--    </logger>-->
+</configuration>
