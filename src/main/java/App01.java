@@ -17,9 +17,9 @@ public class App01 {
         product.setName("price 01");
         product.setDescription("Opis produktu");
         product.setCreated(Instant.now());
-        product.setUpdate(Instant.now());
+        product.setUpdated(Instant.now());
         product.setPrice(BigDecimal.TEN);
-        product.setProductType(ProductType.REAL);
+        product.setType(ProductType.REAL);
         em.persist(product);
 
         em.getTransaction().commit();
