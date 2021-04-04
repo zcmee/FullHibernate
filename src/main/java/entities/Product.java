@@ -32,15 +32,7 @@ public class Product {
 //    @JoinColumn(name="product_id") //bedziemy posiadac cyklicznosc wywołan
     private List<Review> reviews;
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", type=" + type +
-                ", reviews=" + reviews +
-                '}';
-    }
+    @OneToOne(fetch = FetchType.LAZY)
+    private Category category;
+
 }

@@ -1,3 +1,4 @@
+import entities.Category;
 import entities.Product;
 import entities.Review;
 
@@ -22,8 +23,17 @@ public class AppRelations1 {
 //        List <Review> reviews = em.createQuery("FROM Review review").getResultList();
 //        reviews.forEach(review -> System.out.println(review));
 
-        Product product = em.find(Product.class, 1L);
-        em.remove(product);
+        //usuniecie produktu bez kaskaowosci spodouje, ze reviews połaczone z productem zostana
+//        Product product = em.find(Product.class, 1L);
+//        em.remove(product);
+
+        Product product = em.find(Product.class, 3L);
+        System.out.println(product.getCategory().getName());
+
+        System.out.println("------------------------------------");
+
+        Category category3 = em.find(Category.class, 3L);
+        System.out.println(category3.getProduct().size());
 
         em.getTransaction().commit();
         em.close();
