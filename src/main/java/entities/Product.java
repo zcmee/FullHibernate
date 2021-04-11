@@ -8,12 +8,12 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
-
 @NoArgsConstructor
 public class Product {
 
@@ -35,4 +35,25 @@ public class Product {
     @OneToOne(fetch = FetchType.LAZY)
     private Category category;
 
+    @ManyToMany
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "product_id")},
+            inverseJoinColumns = {@JoinColumn(name ="attribute_id")}
+    )
+    private List<Attribute> attributes = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", created=" + created +
+                ", updated=" + updated +
+                ", price=" + price +
+                ", type=" + type +
+                ", attributes=" + attributes +
+                '}';
+    }
+    
 }

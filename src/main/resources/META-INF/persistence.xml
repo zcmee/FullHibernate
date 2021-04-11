@@ -6,6 +6,7 @@
         <class>entities.Product</class>
         <class>entities.Review</class>
         <class>entities.Category</class>
+        <class>entities.Attribute</class>
         <properties>
             <!-- database connection -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
